@@ -7,4 +7,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SingleResponsibility.BL\SingleResponsibility.BL.csproj" />
+  </ItemGroup>
+
 </Project>
