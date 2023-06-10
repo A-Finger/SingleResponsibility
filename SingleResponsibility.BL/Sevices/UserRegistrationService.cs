@@ -5,7 +5,7 @@ namespace SingleResponsibility.BL.Sevices
 {
 	public class UserRegistrationService
 	{
-		public readonly UserRepository userRepository;
+		private readonly UserRepository userRepository;
 		public UserRegistrationService(UserRepository userRepository)
 		{
 			this.userRepository = userRepository;
@@ -13,9 +13,8 @@ namespace SingleResponsibility.BL.Sevices
 
 		public void RegisterUser(string name, string password)
 		{
-			User user = userRepository.GetUserByUsername(name) is null ?
-				throw new ArgumentException("This user already exists") :
-				new User(name, password);
+			User user = userRepository.GetUserByUsername(name);
+			userRepository.Save(user is null ? new User(name, password) : throw new ArgumentException("This user already exists"));
 		}
 	}
 }
