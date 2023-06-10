@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Sevices\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\SingleResponsibility.DAL\SingleResponsibility.DAL.csproj" />
   </ItemGroup>
 
